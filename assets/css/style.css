@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+
+body{
+  min-height: 100vh;
+  position: relative;
+  background-color: rgba(236, 236, 236, 0.473);
+  width: 100%;
+  font-family: 'Work Sans', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+main{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* ----- MODAL ----- */
+#remover-modal, #editar-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0; 
+  bottom: 0; 
+  background-color: rgba(0, 0, 0, 0.253);
+  position: fixed;
+  z-index: 1;
+  padding: 16px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+/* Modal Fechar/Abrir */
+#remover-modal.modal-on, #editar-modal.modal-on{
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
+  visibility: visible;
+}
+#remover-modal.modal-off, #editar-modal.modal-off{
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.15s ease-in-out;
+}
+
+
+#remover-modal form, #editar-modal form{
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  transform: scale(0.5);
+  transition: transform  0.15s ease-out;
+}
+#remover-modal.modal-on form, #editar-modal.modal-on form{
+  transform: scale(1);
+  transition: transform 0.14s ease-in-out;
+}
+#remover-modal.modal-off form, #editar-modal.modal-off form{
+  transform: scale(0.5);
+  transition:  0.15s ease-out;
+}
+
+
+
+#remover-modal form fieldset, #editar-modal form fieldset{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#remover-modal form fieldset .buttons-remover-modal button, #editar-modal form fieldset .buttons-editar-modal button{
+  border-radius: 4px;
+  background-color: rgb(127, 255, 144);
+  font-size: 16px;
+  margin-top: 8px;
+  border: 1px solid rgb(127, 255, 144);
+  padding: 9px;
+}
+
+#remover-modal form fieldset .buttons-remover-modal button:active, #editar-modal form fieldset .buttons-editar-modal button:active{
+  background-color: white;
+  color: rgb(156, 156, 156);
+}
+
+
+#remover-modal form fieldset .buttons-remover-modal button:first-child, #editar-modal form fieldset .buttons-editar-modal button:first-child{
+  margin-right: 16px;
+  background-color: rgb(207, 207, 207);
+  border: 1px solid rgb(207, 207, 207);
+}
+
+
+#remover-modal form fieldset .buttons-remover-modal button:first-child:active, #editar-modal form fieldset .buttons-editar-modal button:first-child:active{
+  background-color: white;
+  color: rgb(156, 156, 156);
+}
+
+
+
+/* ----- MODAL REMOVER ----- */
+#remover-modal form fieldset .buttons-remover-modal{
+  display: flex;
+  justify-content: end;
+  margin-top: 28px;
+}
+
+
+
+/* ----- MODAL EDITAR ----- */
+#editar-modal form fieldset label h4{
+  font-size: 16px;
+  line-height: 12px;
+  margin-bottom: 8px;
+}
+
+#editar-modal form fieldset input{
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 9.5px;
+}
+
+#editar-modal form fieldset input{
+  margin-bottom: 20px;
+}
+
+#editar-modal form fieldset input:focus{  
+  outline: none;
+  border: 1px solid;
+}
+
+#editar-modal form fieldset .buttons-editar-modal{
+  display: flex;
+  justify-content: end;
+}
+
+
+
+/* ----- FORM CADASTRO ----- */
+#form-cadastro{
+  position: fixed;
+  z-index: -1;
+  display: flex;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  transform: translateY(70%);
+}
+
+#form-cadastro.form-cadastro-off{
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(70%);
+  transition:  0.25s ease-in-out;
+}
+
+
+#form-cadastro.form-cadastro-on{
+  z-index: 0;
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform  0.32s cubic-bezier(0.19, 0.06, 0, 0.99), opacity 0.32s;;
+}
+
+
+#form-cadastro fieldset{
+  position: relative;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.title{
+  margin-top: 0;
+  line-height: 16px;
+  font-size: 20px;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+#form-cadastro input, button#cadastrar{
+  border-radius: 4px;
+}
+
+
+#form-cadastro input{
+  font-size: 16px;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 9.5px;
+  margin-bottom: 20px;
+}
+
+#form-cadastro input:focus{
+  outline: none;
+  border: 1px solid;
+}
+
+#form-cadastro input::placeholder{
+  color: rgb(168, 168, 168);
+}
+
+button#cadastrar{
+  font-size: 20px;
+  background-color: rgb(127, 255, 144);
+  margin-top: 8px;
+  border: none;
+  padding: 7.5px;
+  font-weight: 400;
+}
+
+#form-cadastro label h4{
+  font-size: 16px;
+  line-height: 12px;
+  margin-bottom: 8px;
+}
+
+#nome.inputError{
+  border: 1px solid #FF80A1;
+}
+#placa.inputError{
+  border: 1px solid #FF80A1;
+}
+.input-text-error{
+  color: #FF80A1;
+  margin-top: -8px;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Botão registrar carro*/
+#registrar-carro{
+  font-size: 40px;
+  background-color: rgb(127, 255, 144);
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 32px;
+  right:  16px;
+  display: flex;
+  align-items: center;
+  justify-content:  center;
+  transition: background-color 0.2s ease-in;
+}
+
+#registrar-carro span{
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 20px;
+  background-color: #000;
+}
+
+#registrar-carro span::after{
+  display: block;
+  background-color: #000;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotate(90deg);
+}
+
+#registrar-carro.registrar-carro-on{
+  background-color: #FF80A1;
+  transition: background-color 0.2s ease-in;
+}
+
+
+
+/* Pesquisar */
+#container-pesquisar{
+  overflow: hidden;
+  padding: 16px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#container-pesquisar input{
+  visibility: hidden;
+  z-index: -1;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 16px;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 9.5px;
+}
+
+#container-pesquisar input.pesquisar-input-off, #container-pesquisar #voltar-patio-btn.voltar-patio-btn-off, #container-pesquisar #pesquisar-btn.pesquisar-btn-off{
+  visibility: hidden;
+  z-index: -1;
+}
+
+#container-pesquisar input.pesquisar-input-on, #container-pesquisar #voltar-patio-btn.voltar-patio-btn-on, #container-pesquisar button.pesquisar-btn-on{
+  visibility: visible;
+  z-index: 0;
+}
+
+#container-pesquisar input:focus{
+  outline: none;
+  border: 1px solid;
+}
+
+#container-pesquisar input::placeholder{
+  color: rgb(168, 168, 168);
+}
+
+
+#container-pesquisar #voltar-patio-btn{
+  visibility: hidden;
+  z-index: -1;
+  margin-right: 8px;
+  font-size: 20px;
+  padding-left:  10px;
+  padding-right: 10px;
+  border: none;
+  background-color: none;  
+}
+
+
+#container-pesquisar #pesquisar-btn{
+  background-color: none;  
+  padding-left:  10px;
+  padding-right: 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid white;
+}
+
+
+#container-pesquisar #pesquisar-btn.pesquisar-btn-off{
+  width: 0;
+  padding-left:  0px;
+  padding-right: 0px;
+}
+
+
+#container-pesquisar #pesquisar-btn:active{
+  border: 1px solid black;
+}
+
+
+
+/* ---- PATIO ----*/
+#patio{
+  padding: 16px;
+}
+
+#patio .carro{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.281);
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.carro .nome-e-opcoes-carro{
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nome-e-opcoes-carro .nome-veiculo{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nome-e-opcoes-carro .opcoes{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nome-e-opcoes-carro .opcoes button{
+  background: none;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.nome-e-opcoes-carro .opcoes button.editar:active{
+  border: 1px solid;
+}
+
+.nome-e-opcoes-carro .opcoes button.deletar{
+  margin-right: 8px;
+  color: #FF80A1;
+}
+
+.nome-e-opcoes-carro .opcoes button.deletar:active{
+  border: 1px solid #FF80A1;
+}
+
+.carro .placa-e-entrada-carro{
+  display: flex;
+  justify-content: space-between;
+}
