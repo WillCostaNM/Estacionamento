@@ -227,8 +227,10 @@ class Patio {
             $('#patio').innerHTML = '';
             pesquisarInput.classList.add('pesquisar-input-on');
             voltarPatioBtn.classList.add('voltar-patio-btn-on');
-            pesquisarBtn.classList.add('pesquisar-btn-off');
-            registrarBtn.style.cssText = 'display: none;';
+            $('#pesquisar-cadastrar-container').classList.add('off');
+            // pesquisarBtn.classList.add('pesquisar-btn-off');
+            // registrarBtn.classList.add('off');
+            // $('#registrar-carro-desktop').classList.add('off');
             pesquisarInput.focus();
         }, 230);
     });
@@ -239,13 +241,14 @@ class Patio {
     });
     // Voltar para o patio
     voltarPatioBtn.addEventListener('click', e => {
-        voltarPatioBtn.classList.remove('voltar-patio-btn-on');
-        pesquisarBtn.classList.remove('pesquisar-btn-off');
-        pesquisarInput.classList.remove('pesquisar-input-on');
-        pesquisarInput.classList.add('pesquisar-input-off');
-        registrarBtn.style.cssText = 'display: flex;';
-        pesquisarInput.value = '';
-        patio.render();
+        setTimeout(() => {
+            voltarPatioBtn.classList.remove('voltar-patio-btn-on');
+            pesquisarInput.classList.remove('pesquisar-input-on');
+            // pesquisarInput.classList.add('pesquisar-input-off');
+            $('#pesquisar-cadastrar-container').classList.remove('off');
+            pesquisarInput.value = '';
+            patio.render();
+        }, 230);
     });
     // Render patio
     patio.render();
@@ -254,6 +257,23 @@ class Patio {
     });
     // Abrir form cadastro de carro
     registrarBtn.addEventListener('click', (e) => {
+        deg += 45;
+        plusIcon.style.transform = `rotate(${deg}deg)`;
+        plusIcon.style.transition = 'transform 0.2s ease-in';
+        abrirFecharForm(form);
+        registrarBtn.classList.toggle('registrar-carro-on');
+    });
+    $('#registrar-carro-desktop').addEventListener('click', e => {
+        const btn = e.currentTarget;
+        btn.style.zIndex = '-1';
+        deg += 45;
+        plusIcon.style.transform = `rotate(${deg}deg)`;
+        plusIcon.style.transition = 'transform 0.2s ease-in';
+        abrirFecharForm(form);
+        registrarBtn.classList.toggle('registrar-carro-on');
+    });
+    $('#fechar-form-cadastro-btn').addEventListener('click', e => {
+        $('#registrar-carro-desktop').style.zIndex = '0';
         deg += 45;
         plusIcon.style.transform = `rotate(${deg}deg)`;
         plusIcon.style.transition = 'transform 0.2s ease-in';

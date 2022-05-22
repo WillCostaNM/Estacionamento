@@ -12,13 +12,26 @@ body{
 main{
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+#container, #form-cadastro fieldset{
+  width: 100%;
+  max-width: 500px;
+}
+
+.modal{
+  width: 100%;
+  max-width: 468px;
+}
 
 
 /* ----- MODAL ----- */
 #remover-modal, #editar-modal{
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   top: 0;
@@ -233,10 +246,29 @@ button#cadastrar{
   margin-bottom: 20px;
 }
 
+#form-cadastro-titulo{
+  display: flex;
+  justify-content: space-between;
+}
 
 
+
+#fechar-form-cadastro-btn{
+  display: none;
+  margin-bottom: 20px;
+  position: relative;
+  margin-left: auto;
+}
 
 /* Botão registrar carro*/
+#registrar-carro-desktop{
+  display: none;
+}
+
+#registrar-carro.off{
+  display: none;
+}
+
 #registrar-carro{
   font-size: 40px;
   background-color: rgb(127, 255, 144);
@@ -253,7 +285,7 @@ button#cadastrar{
   transition: background-color 0.2s ease-in;
 }
 
-#registrar-carro span{
+.registrar-btn span{
   position: relative;
   display: block;
   height: 4px;
@@ -261,7 +293,7 @@ button#cadastrar{
   background-color: #000;
 }
 
-#registrar-carro span::after{
+.registrar-btn span::after{
   display: block;
   background-color: #000;
   content: '';
@@ -277,7 +309,6 @@ button#cadastrar{
 }
 
 
-
 /* Pesquisar */
 #container-pesquisar{
   overflow: hidden;
@@ -288,15 +319,45 @@ button#cadastrar{
   margin-bottom: 20px;
 }
 
+#pesquisar-cadastrar-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#pesquisar-cadastrar-container.off, #container-voltar-pesquisar.off{
+  display: none;
+}
+
+#container-voltar-pesquisar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+} 
+
 #container-pesquisar input{
   visibility: hidden;
   z-index: -1;
-  width: 100%;
+  width: calc(100% - 69px);
+  position: relative;
   border-radius: 4px;
   font-size: 16px;
   border: 1px solid rgb(202, 202, 202);
   padding: 9.5px;
 }
+
+#container-pesquisar #pesquisar-btn{
+  margin-right: 8px;
+}
+
+#container-pesquisar #voltar-patio-btn, #container-pesquisar #pesquisar-btn, #container-pesquisar #registrar-carro-desktop, #fechar-form-cadastro-btn{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;  
+}
+
 
 #container-pesquisar input.pesquisar-input-off, #container-pesquisar #voltar-patio-btn.voltar-patio-btn-off, #container-pesquisar #pesquisar-btn.pesquisar-btn-off{
   visibility: hidden;
@@ -321,24 +382,7 @@ button#cadastrar{
 #container-pesquisar #voltar-patio-btn{
   visibility: hidden;
   z-index: -1;
-  margin-right: 8px;
-  font-size: 20px;
-  padding-left:  10px;
-  padding-right: 10px;
-  border: none;
-  background-color: none;  
 }
-
-
-#container-pesquisar #pesquisar-btn{
-  background-color: none;  
-  padding-left:  10px;
-  padding-right: 10px;
-  font-size: 20px;
-  border-radius: 4px;
-  border: 1px solid white;
-}
-
 
 #container-pesquisar #pesquisar-btn.pesquisar-btn-off{
   width: 0;
@@ -347,8 +391,15 @@ button#cadastrar{
 }
 
 
-#container-pesquisar #pesquisar-btn:active{
+#container-pesquisar #pesquisar-btn:active, #container-pesquisar #voltar-patio-btn:active,
+#container-pesquisar #registrar-carro-desktop:active, #fechar-form-cadastro-btn:active{
   border: 1px solid black;
+}
+
+
+#container-pesquisar #voltar-patio-btn{
+  width:  40px;
+  height: 40px;
 }
 
 
@@ -406,4 +457,65 @@ button#cadastrar{
 .carro .placa-e-entrada-carro{
   display: flex;
   justify-content: space-between;
+}
+
+
+/* Media query */
+@media (min-width: 500px) {
+
+  #form-cadastro {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #registrar-carro-desktop.off{
+    display: none;
+  }
+
+  #registrar-carro-desktop{
+    height: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #registrar-carro{
+    display: none;
+  }
+  
+
+  #fechar-form-cadastro-btn{
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+  }
+  #fechar-form-cadastro-btn span{
+    transform: rotate(45deg);
+  }
+
+  #registrar-carro span{
+    /* position: relative;
+    display: block;
+    height: 4px;
+    width: 20px;
+    background-color: #000; */
+  }
+
+  #registrar-carro span::after{
+    /* display: block;
+    background-color: #000;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(90deg); */
+  }
+
+  #registrar-carro.registrar-carro-on{
+    background-color: transparent;
+    /* background-color: #FF80A1;
+    transition: background-color 0.2s ease-in; */
+  }
+
+  
 }

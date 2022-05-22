@@ -17,59 +17,83 @@
 
 
 <body>
+  <form id="form-cadastro" class="disabled">
+    <fieldset>
+      
+      <!-- fechar-form-cadastro-btn -->
+      <button id="fechar-form-cadastro-btn" class="registrar-btn">
+        <span></span>
+      </button>
+      
+
+      <div id="form-cadastro-titulo">
+        <h3 class="title">Detalhes do carro</h3>
+      </div>
+      
+
+      <label for="nome">
+        <h4>Nome</h4>
+      </label>
+
+      <input 
+        type="text" 
+        id="nome" 
+        placeholder="Digite o nome do veículo" 
+        autocomplete="off"
+      />
+      
+      <label for="placa">
+        <h4>Placa</h4>
+      </label>
+
+      <input 
+        type="text" 
+        id="placa" 
+        placeholder="Digite o nome da placa" 
+        autocomplete="off"
+      />
+    
+      <button id="cadastrar">Cadastrar</button>
+    </fieldset>
+  </form>
 
   <main>
-    
-    <form id="form-cadastro" class="disabled">
-      <fieldset>
-        <h3 class="title">Detalhes do carro</h3>
-        
-
-        <label for="nome">
-          <h4>Nome</h4>
-        </label>
-
-        <input 
-          type="text" 
-          id="nome" 
-          placeholder="Digite o nome do veículo" 
-          autocomplete="off"
-        />
-        
-        <label for="placa">
-          <h4>Placa</h4>
-        </label>
+    <div id="container">
   
-        <input 
-          type="text" 
-          id="placa" 
-          placeholder="Digite o nome da placa" 
-          autocomplete="off"
-        />
+      <div id="container-pesquisar">
+
+        <div id="container-voltar-pesquisar">   
+          <button id="voltar-patio-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          
+          <input type="text" name="pesquisar-input" placeholder="Placa do veículo" id="pesquisar-input">
+        </div>
+
+
+        <div id="pesquisar-cadastrar-container">
+          <button id="pesquisar-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+  
+          <button id="registrar-carro" class="registrar-btn">
+            <span></span>
+          </button>
+
+          <button id="registrar-carro-desktop" class="registrar-btn">
+            <span></span>
+          </button>
+        </div>
+      </div>
+
       
-        <button id="cadastrar">Cadastrar</button>
-      </fieldset>
-    </form>
-
-    <div id="container-pesquisar">
-      <button id="voltar-patio-btn">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
-
-      <input type="text" name="pesquisar-input" placeholder="Placa do veículo" id="pesquisar-input">
-
-      <button id="pesquisar-btn">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+  
+      <div id="patio">
+        
+      </div>
+  
+     
     </div>
-
-    <div id="patio">
-      
-    </div>
-
-    <button id="registrar-carro">
-      <span></span>
-    </button>
   </main>
 
   <div id="remover-modal">
@@ -86,7 +110,7 @@
   </div>
 
   <div id="editar-modal">
-    <form id="form-editar">
+    <form id="form-editar" class="modal">
         <fieldset>
           <h3 class="title">Editar</h3>
 
