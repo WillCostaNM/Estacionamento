@@ -303,8 +303,8 @@ class Patio{
       $('#patio').innerHTML = '';
       pesquisarInput.classList.add('pesquisar-input-on');
       voltarPatioBtn.classList.add('voltar-patio-btn-on');
-
       $('#pesquisar-cadastrar-container').classList.add('off');
+      $('#titulo').style.display = 'none';
 
       pesquisarInput.focus();
     }, window.screen.width <= 500 ? 230 : 0);
@@ -324,6 +324,9 @@ class Patio{
       pesquisarInput.classList.remove('pesquisar-input-on');
 
       $('#pesquisar-cadastrar-container').classList.remove('off');
+
+      $('#titulo').style.display = 'inline-block';
+
 
       pesquisarInput.value = '';
       
