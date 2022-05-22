@@ -138,7 +138,7 @@ class Patio {
         setTimeout(() => {
             modalClassList.contains('modal-off') ? modalClassList.remove('modal-off') : '';
             modalClassList.add('modal-on');
-        }, 170);
+        }, window.screen.width <= 500 ? 170 : 0);
         modalEditar.addEventListener('click', e => {
             e.target === modalEditar ? fecharModal(modalEditar) : '';
         });
@@ -179,7 +179,7 @@ class Patio {
         setTimeout(() => {
             removerModal.classList.contains('modal-off') ? removerModal.classList.remove('modal-off') : '';
             removerModal.classList.add('modal-on');
-        }, 170);
+        }, window.screen.width <= 500 ? 170 : 0);
         // Fechar modal remover
         removerModal.addEventListener('click', e => {
             e.target === removerModal ? fecharModal(removerModal) : '';
@@ -228,11 +228,8 @@ class Patio {
             pesquisarInput.classList.add('pesquisar-input-on');
             voltarPatioBtn.classList.add('voltar-patio-btn-on');
             $('#pesquisar-cadastrar-container').classList.add('off');
-            // pesquisarBtn.classList.add('pesquisar-btn-off');
-            // registrarBtn.classList.add('off');
-            // $('#registrar-carro-desktop').classList.add('off');
             pesquisarInput.focus();
-        }, 230);
+        }, window.screen.width <= 500 ? 230 : 0);
     });
     // Pesquisar Carro
     pesquisarInput.addEventListener('keyup', e => {
@@ -244,11 +241,10 @@ class Patio {
         setTimeout(() => {
             voltarPatioBtn.classList.remove('voltar-patio-btn-on');
             pesquisarInput.classList.remove('pesquisar-input-on');
-            // pesquisarInput.classList.add('pesquisar-input-off');
             $('#pesquisar-cadastrar-container').classList.remove('off');
             pesquisarInput.value = '';
             patio.render();
-        }, 230);
+        }, window.screen.width <= 500 ? 230 : 0);
     });
     // Render patio
     patio.render();
