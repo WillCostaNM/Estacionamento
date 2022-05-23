@@ -5,10 +5,8 @@ Desafio de projeto criado pelo professor [André Soares](https://github.com/soar
 <br/>
 <br/>
 
-<div style="display: flex; justify-content-center;">
-  https://user-images.githubusercontent.com/68829088/169911890-e976a40c-20a2-4a01-9173-25404b90f64e.mp4
-</div>
 
+https://user-images.githubusercontent.com/68829088/169911890-e976a40c-20a2-4a01-9173-25404b90f64e.mp4
 
 
 
