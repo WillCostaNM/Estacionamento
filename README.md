@@ -9,10 +9,12 @@ Desafio de projeto criado pelo professor [André Soares](https://github.com/soar
 ## Live Demo
 [Estacionamento](https://estacionamento-three.vercel.app/)
 
+<br/>
 
 ## Desafio:
 - Criar um sistema de estacionamento com typescript;
 
+<br/>
 
 ## Features
 Além das opções criadas pelo professor, acrescentei outras duas:
