@@ -203,7 +203,6 @@ class Patio{
     // Editar o carro && Fechar modal editar
     editarBtn.addEventListener('click', ()=>{
       if(!novoNomeInput.value || !novaPlacaInput.value){
-        alert('Os campos nome e placa são obrigatórios');
         return
       }
 
@@ -386,19 +385,33 @@ class Patio{
 
 
 
+
+  // - Editar Carro -
+  // Checar os dados inseridos na edição do carro
+  $('#novo-nome').addEventListener('keyup', e => checkInput(e.currentTarget as HTMLInputElement));
+  $('#nova-placa').addEventListener('keyup', e => checkInput(e.currentTarget as HTMLInputElement));
+
+  $('.editar').addEventListener('click', e => {
+    checkInput($('#novo-nome'));
+    checkInput($('#nova-placa'));
+  });
+
+
+
+  
+  // - Cadastrar Carro -
   // Checar os dados inseridos no cadastro de carro
   nomeInput.addEventListener('keyup', e => checkInput(e.currentTarget as HTMLInputElement));
   placaInput.addEventListener('keyup', e => checkInput(e.currentTarget as HTMLInputElement));
 
   
-  // Cadastrar carro
   $('#cadastrar').addEventListener('click', e => {
     const nome = nomeInput.value;
     const placa = placaInput.value;
 
     checkInput(nomeInput);
     checkInput(placaInput);
-
+    
     if(!nome || !placa){
       return;
     }
