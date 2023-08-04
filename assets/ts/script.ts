@@ -430,6 +430,7 @@ class Patio{
     plusIcon.style.transform = `rotate(${deg}deg)`;
     plusIcon.style.transition = 'transform 0.2s ease-in';
     button.classList.remove('registrar-carro-on');
+    $('#registrar-carro-desktop').style.zIndex = '0';
   })
 
 })();

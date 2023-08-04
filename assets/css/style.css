@@ -484,7 +484,10 @@ button#cadastrar{
   #container-pesquisar #voltar-patio-btn:hover, #container-pesquisar #pesquisar-btn:hover, #container-pesquisar #registrar-carro-desktop:hover, #fechar-form-cadastro-btn:hover, .modal button:hover, .nome-e-opcoes-carro .opcoes button:hover{
     border: 1px solid;
   }
-
+  
+  #cadastrar{
+    cursor: pointer;
+  }
 
   #form-cadastro {
     width: 100%;
